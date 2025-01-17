@@ -135,7 +135,7 @@ convention = "numpy"
 docstring-code-format = true
 
 [tool.towncrier]
-package = "mkdocstrings_python_accessors"
+package = "mkdocstrings_handlers.python_accessors"
 package_dir = "src"
 filename = "docs/changelog.md"
 directory = "changelog/"
