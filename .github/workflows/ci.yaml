@@ -1,0 +1,83 @@
+name: CI
+
+on:
+  pull_request:
+  push:
+    branches: [main]
+    tags: ['v*']
+
+jobs:
+  mypy:
+    if: ${{ !github.event.pull_request.draft }}
+    strategy:
+      matrix:
+        os: [ "ubuntu-latest" ]
+        python-version: [ "3.9" ]
+    runs-on: "${{ matrix.os }}"
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+      - uses: ./.github/actions/setup
+        with:
+          python-version: ${{ matrix.python-version }}
+          uv-dependency-install-flags: "--all-extras --group dev"
+      - name: mypy
+        run: |
+          MYPYPATH=stubs uv run mypy src
+
+  urls:
+    if: ${{ !github.event.pull_request.draft }}
+    runs-on: "ubuntu-latest"
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+      - name: check-urls-are-valid
+        uses: lycheeverse/lychee-action@v2
+        with:
+          # Exclude local links
+          # and the template link in pyproject.toml
+          args: "--exclude 'file://' --exclude '^https://github\\.com/climate-resource/mkdocstrings-python-accessors/pull/\\{issue\\}$' ."
+
+  check-build:
+    strategy:
+      matrix:
+        os: [ "ubuntu-latest" ]
+        python-version: [ "3.11" ]
+    runs-on: "${{ matrix.os }}"
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+      - name: Setup uv
+        id: setup-uv
+        uses: astral-sh/setup-uv@v4
+        with:
+          version: "0.5.11"
+          python-version: ${{ matrix.python-version }}
+      - name: Build package
+        run: |
+          uv build
+      - name: Check build
+        run: |
+          tar -tvf dist/mkdocstrings_python_accessors-*.tar.gz --wildcards '*mkdocstrings_python_accessors/py.typed'
+          tar -tvf dist/mkdocstrings_python_accessors-*.tar.gz --wildcards 'mkdocstrings_python_accessors-*/LICENCE'
+
+  check-dependency-licences:
+    strategy:
+      matrix:
+        os: [ "ubuntu-latest" ]
+        python-version: [ "3.11" ]
+    runs-on: "${{ matrix.os }}"
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+      - uses: ./.github/actions/setup
+        with:
+          python-version: ${{ matrix.python-version }}
+          uv-dependency-install-flags: "--group dev"
+      - name: Check licences of dependencies
+        shell: bash
+        run: |
+          TEMP_FILE=$(mktemp)
+          uv export --no-dev > $TEMP_FILE
+          uv run liccheck -r $TEMP_FILE -R licence-check.txt
+          cat licence-check.txt
