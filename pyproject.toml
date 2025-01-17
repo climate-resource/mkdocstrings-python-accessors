@@ -12,7 +12,6 @@ dependencies = [
 ]
 readme = "README.md"
 classifiers = [
-    # TODO: pull some of these across into our copier template
     "License :: OSI Approved :: BSD License",
     "Development Status :: 4 - Beta",
     "Intended Audience :: Developers",
@@ -30,14 +29,12 @@ classifiers = [
     "Typing :: Typed",
 ]
 
-# TODO: pull into our copier template
 [project.urls]
-Homepage = "https://climate-resource.github.io/mkdocstrings-python-accessors"
-Documentation = "https://climate-resource.github.io/mkdocstrings-python-accessors"
-Changelog = "https://climate-resource.github.io/mkdocstrings-python-accessors/changelog"
+Homepage = "https://github.com/climate-resource/mkdocstrings-python-accessors"
+Documentation = "https://github.com/climate-resource/mkdocstrings-python-accessors"
+Changelog = "https://github.com/climate-resource/mkdocstrings-python-accessors/blob/main/docs/changelog.md"
 Repository = "https://github.com/climate-resource/mkdocstrings-python-accessors"
 Issues = "https://github.com/climate-resource/mkdocstrings-python-accessors/issues"
-Discussions = "https://github.com/climate-resource/mkdocstrings-python-accessors/discussions"
 
 [project.optional-dependencies]
 
@@ -169,7 +166,6 @@ authorized_licenses = [
     "Apache License, Version 2.0",
     "CMU License (MIT-CMU)",
     "Historical Permission Notice and Disclaimer (HPND)",
-    # TODO: push upstream
     "isc",
     "isc license",
     "isc license (iscl)",
