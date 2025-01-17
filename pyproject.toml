@@ -194,6 +194,6 @@ unauthorized_licenses = [
     "gpl v1",
     "gplv1",
 ]
-[Authorized Packages]
+[tool.liccheck.authorized_packages]
 # Apache, just mislabelled (see https://github.com/analog-garage/mkdocstrings-python-xref/blob/main/LICENSE.md)
-mkdocstrings-python-xref
+mkdocstrings-python-xref = "1.0.*"
