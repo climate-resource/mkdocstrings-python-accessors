@@ -2,7 +2,7 @@
 *.ipynb
 
 # Lock file
-pdm.lock
+uv.lock
 # Associated requirements file
 requirements.txt
 
