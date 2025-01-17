@@ -21,6 +21,11 @@ from the examples given in that link.
 
 <!-- towncrier release notes start -->
 
+## mkdocstrings-python-accessors v0.1.2 (2025-01-17)
+
+No significant changes.
+
+
 ## mkdocstrings-python-accessors v0.1.1 (2025-01-17)
 
 No significant changes.
