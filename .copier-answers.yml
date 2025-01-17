@@ -1,0 +1,17 @@
+# Changes here will be overwritten by Copier; NEVER EDIT MANUALLY
+_commit: v0.10.1
+_src_path: gl:znicholls/copier-core-python-repository
+conda_release: false
+email: zebedee.nicholls@climate-resource.com
+include_cli: false
+name: Zebedee Nicholls
+notebook_based_docs: false
+package_manager: uv
+pandas_doctests: false
+plot_dependencies: false
+project_description_short: Support for documenting accessors with mkdocstrings.
+project_name_human: mkdocstrings-python-accessors
+project_name_pip: mkdocstrings-python-accessors
+project_name_python: mkdocstrings_python_accessors
+project_url: https://github.com/climate-resource/mkdocstrings-python-accessors
+track_lock_file: false

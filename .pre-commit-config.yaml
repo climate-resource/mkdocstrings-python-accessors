@@ -1,0 +1,40 @@
+# See https://pre-commit.com for more information
+ci:
+  autofix_prs: false
+  autoupdate_schedule: quarterly
+  autoupdate_branch: pre-commit-autoupdate
+  # Currently network access isn't supported in the pre-commit CI product.
+  skip: [uv-lock, uv-export, pdm-lock-check]
+
+# See https://pre-commit.com/hooks.html for more hooks
+repos:
+  - repo: https://github.com/pre-commit/pre-commit-hooks
+    rev: "v5.0.0"
+    hooks:
+      - id: check-added-large-files
+      - id: check-ast
+      - id: check-case-conflict
+      - id: check-json
+      - id: check-merge-conflict
+      - id: check-symlinks
+      - id: check-yaml
+      - id: debug-statements
+      - id: detect-private-key
+      - id: end-of-file-fixer
+      - id: fix-byte-order-marker
+      - id: mixed-line-ending
+      - id: trailing-whitespace
+  - repo: local
+    hooks:
+      # Prevent committing .rej files
+      - id: forbidden-files
+        name: forbidden files
+        entry: found Copier update rejection files; review them and remove them
+        language: fail
+        files: "\\.rej$"
+  - repo: https://github.com/charliermarsh/ruff-pre-commit
+    rev: "v0.8.4"
+    hooks:
+      - id: ruff
+        args: [ --fix, --exit-non-zero-on-fix ]
+      - id: ruff-format
