@@ -1,6 +1,5 @@
 [project]
 name = "mkdocstrings-python-accessors"
-description = "A Python accessor handler for mkdocstrings."
 version = "0.1.0a1"
 description = "Support for documenting accessors with mkdocstrings."
 authors = [
