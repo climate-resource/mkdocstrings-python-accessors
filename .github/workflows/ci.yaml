@@ -58,7 +58,7 @@ jobs:
           uv build
       - name: Check build
         run: |
-          tar -tvf dist/mkdocstrings_python_accessors-*.tar.gz --wildcards '*mkdocstrings_python_accessors/py.typed'
+          tar -tvf dist/mkdocstrings_python_accessors-*.tar.gz --wildcards '*mkdocstrings_handlers/python_accessors/py.typed'
           tar -tvf dist/mkdocstrings_python_accessors-*.tar.gz --wildcards 'mkdocstrings_python_accessors-*/LICENCE'
 
   check-dependency-licences:
