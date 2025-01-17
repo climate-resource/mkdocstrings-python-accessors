@@ -169,6 +169,8 @@ authorized_licenses = [
     "Apache License, Version 2.0",
     "CMU License (MIT-CMU)",
     "Historical Permission Notice and Disclaimer (HPND)",
+    # TODO: push upstream
+    "isc",
     "isc license",
     "isc license (iscl)",
     "gnu lgpl",
