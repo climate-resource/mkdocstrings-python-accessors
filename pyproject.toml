@@ -194,3 +194,6 @@ unauthorized_licenses = [
     "gpl v1",
     "gplv1",
 ]
+[Authorized Packages]
+# Apache, just mislabelled (see https://github.com/analog-garage/mkdocstrings-python-xref/blob/main/LICENSE.md)
+mkdocstrings-python-xref
