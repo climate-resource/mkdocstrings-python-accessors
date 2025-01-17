@@ -59,6 +59,8 @@ Hence there are no installation instructions here.
 
 <!--- --8<-- [end:installation] -->
 
+## Usage
+
 Python handler for [mkdocstrings](https://github.com/mkdocstrings/mkdocstrings)
 supporting documentation of accessors.
 Takes inspiration from [sphinx-autosummary-accessors](https://github.com/xarray-contrib/sphinx-autosummary-accessors).
