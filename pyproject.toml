@@ -196,4 +196,4 @@ unauthorized_licenses = [
 ]
 [tool.liccheck.authorized_packages]
 # Apache, just mislabelled (see https://github.com/analog-garage/mkdocstrings-python-xref/blob/main/LICENSE.md)
-mkdocstrings-python-xref = "1.0.*"
+mkdocstrings-python-xref = "1.*"
