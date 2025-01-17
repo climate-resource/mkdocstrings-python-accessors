@@ -1,14 +1,20 @@
 [project]
 name = "mkdocstrings-python-accessors"
-version = "0.3.4a1"
 description = "A Python accessor handler for mkdocstrings."
-authors = [{name = "Zebedee Nicholls", email = "zebedee.nicholls@climate-resource.com"}]
+version = "0.1.0a1"
+description = "Support for documenting accessors with mkdocstrings."
+authors = [
+    { name = "Zebedee Nicholls", email = "zebedee.nicholls@climate-resource.com" },
+]
 license = {text = "BSD-3-Clause"}
-readme = "README.md"
 requires-python = ">=3.9"
-keywords = []
+dependencies = [
+    "mkdocstrings-python-xref>=1.0",
+]
+readme = "README.md"
 classifiers = [
     # TODO: pull some of these across into our copier template
+    "License :: OSI Approved :: BSD License",
     "Development Status :: 4 - Beta",
     "Intended Audience :: Developers",
     "Programming Language :: Python",
@@ -24,9 +30,6 @@ classifiers = [
     "Topic :: Utilities",
     "Typing :: Typed",
 ]
-dependencies = [
-    "mkdocstrings-python-xref>=1.0",
-]
 
 # TODO: pull into our copier template
 [project.urls]
@@ -37,13 +40,35 @@ Repository = "https://github.com/climate-resource/mkdocstrings-python-accessors"
 Issues = "https://github.com/climate-resource/mkdocstrings-python-accessors/issues"
 Discussions = "https://github.com/climate-resource/mkdocstrings-python-accessors/discussions"
 
+[project.optional-dependencies]
+
+[dependency-groups]
+# The development dependencies are pinned
+# to give a consistent starting point when using this template.
+# They should be removed/updated/changed/loosened as suits your project.
+# (As soon as you have a lock file, you can remove all of the implied dependencies.)
+dev = [
+    # Key dependencies
+    # ----------------
+    "liccheck==0.9.2",
+    "mypy==1.14.0",
+    "towncrier==24.8.0",
+]
+all-dev = [
+    {include-group = "dev"},
+]
+
 [build-system]
-requires = ["pdm-backend"]
+requires = [
+    "pdm-backend",
+]
 build-backend = "pdm.backend"
 
+[tool.pdm]
 [tool.pdm.build]
-package-dir = "src"
-includes = ["src/mkdocstrings_handlers"]
+includes = [
+    "src/mkdocstrings_handlers",
+]
 # Consider adding something like this to our copier template.
 # Include as much as possible in the source distribution, to help redistributors.
 excludes = ["**/.pytest_cache"]
@@ -54,4 +79,114 @@ source-includes = [
     # "mkdocs.yml",
     # "*.md",
     "LICENCE",
+]
+
+[tool.mypy]
+strict = true
+disallow_any_unimported = true
+show_error_codes = true
+show_error_context = true
+warn_unreachable = true
+follow_imports = "normal"
+
+[tool.ruff]
+src = [
+    "src",
+]
+target-version = "py39"
+line-length = 88
+
+[tool.ruff.lint]
+select = [
+    "E",
+    "W",
+    "F",
+    "I",
+    "D",
+    "PL",
+    "TRY",
+    "NPY",
+    "RUF",
+    "UP",
+    "S",
+]
+unfixable = [
+    "PD002",
+]
+ignore = [
+    "D200",
+    "D400",
+    "UP007",
+]
+
+[tool.ruff.lint.isort]
+known-first-party = [
+    "src",
+]
+
+[tool.ruff.lint.pydocstyle]
+convention = "numpy"
+
+[tool.ruff.format]
+docstring-code-format = true
+
+[tool.towncrier]
+package = "mkdocstrings_python_accessors"
+package_dir = "src"
+filename = "docs/changelog.md"
+directory = "changelog/"
+title_format = "## mkdocstrings-python-accessors {version} ({project_date})"
+underlines = [
+    "",
+    "",
+    "",
+]
+issue_format = "[#{issue}](https://github.com/climate-resource/mkdocstrings-python-accessors/pull/{issue})"
+type = [
+    { directory = "breaking", name = "⚠️ Breaking Changes", showcontent = true },
+    { directory = "deprecation", name = "🗑️ Deprecations", showcontent = true },
+    { directory = "feature", name = "🆕 Features", showcontent = true },
+    { directory = "improvement", name = "🎉 Improvements", showcontent = true },
+    { directory = "fix", name = "🐛 Bug Fixes", showcontent = true },
+    { directory = "docs", name = "📚 Improved Documentation", showcontent = true },
+    { directory = "trivial", name = "🔧 Trivial/Internal Changes", showcontent = false },
+]
+
+[tool.liccheck]
+authorized_licenses = [
+    "bsd",
+    "bsd license",
+    "BSD 3-Clause",
+    "CC0",
+    "apache",
+    "apache 2.0",
+    "apache software",
+    "apache software license",
+    "Apache License, Version 2.0",
+    "CMU License (MIT-CMU)",
+    "Historical Permission Notice and Disclaimer (HPND)",
+    "isc license",
+    "isc license (iscl)",
+    "gnu lgpl",
+    "lgpl with exceptions or zpl",
+    "LGPLv2+",
+    "GNU Lesser General Public License v2 (LGPLv2)",
+    "GNU Lesser General Public License v2 or later (LGPLv2+)",
+    "mit",
+    "mit license",
+    "Mozilla Public License 2.0 (MPL 2.0)",
+    "python software foundation",
+    "python software foundation license",
+    "The Unlicense (Unlicense)",
+    "zpl 2.1",
+]
+unauthorized_licenses = [
+    "agpl",
+    "gnu agpl",
+    "gpl v3",
+    "gplv3",
+    "gpl v2",
+    "gplv2",
+    "gpl v1",
+    "gplv1",
 ]
