@@ -4,13 +4,11 @@
 Support for documenting accessors with mkdocstrings.
 
 **Key info :**
-[![Docs](https://readthedocs.org/projects/mkdocstrings-python-accessors/badge/?version=latest)](https://mkdocstrings-python-accessors.readthedocs.io)
 [![Main branch: supported Python versions](https://img.shields.io/python/required-version-toml?tomlFilePath=https%3A%2F%2Fraw.githubusercontent.com%2Fclimate-resource%2Fmkdocstrings-python-accessors%2Fmain%2Fpyproject.toml)](https://github.com/climate-resource/mkdocstrings-python-accessors/blob/main/pyproject.toml)
 [![Licence](https://img.shields.io/pypi/l/mkdocstrings-python-accessors?label=licence)](https://github.com/climate-resource/mkdocstrings-python-accessors/blob/main/LICENCE)
 
 **PyPI :**
 [![PyPI](https://img.shields.io/pypi/v/mkdocstrings-python-accessors.svg)](https://pypi.org/project/mkdocstrings-python-accessors/)
-[![PyPI install](https://github.com/climate-resource/mkdocstrings-python-accessors/actions/workflows/install-pypi.yaml/badge.svg?branch=main)](https://github.com/climate-resource/mkdocstrings-python-accessors/actions/workflows/install-pypi.yaml)
 
 **Tests :**
 [![CI](https://github.com/climate-resource/mkdocstrings-python-accessors/actions/workflows/ci.yaml/badge.svg?branch=main)](https://github.com/climate-resource/mkdocstrings-python-accessors/actions/workflows/ci.yaml)
