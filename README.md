@@ -10,13 +10,13 @@ Support for documenting accessors with mkdocstrings.
 **PyPI :**
 [![PyPI](https://img.shields.io/pypi/v/mkdocstrings-python-accessors.svg)](https://pypi.org/project/mkdocstrings-python-accessors/)
 
-**Tests :**
+**CI :**
 [![CI](https://github.com/climate-resource/mkdocstrings-python-accessors/actions/workflows/ci.yaml/badge.svg?branch=main)](https://github.com/climate-resource/mkdocstrings-python-accessors/actions/workflows/ci.yaml)
-[![Coverage](https://codecov.io/gh/climate-resource/mkdocstrings-python-accessors/branch/main/graph/badge.svg)](https://codecov.io/gh/climate-resource/mkdocstrings-python-accessors)
 
 **Other info :**
 [![Last Commit](https://img.shields.io/github/last-commit/climate-resource/mkdocstrings-python-accessors.svg)](https://github.com/climate-resource/mkdocstrings-python-accessors/commits/main)
 [![Contributors](https://img.shields.io/github/contributors/climate-resource/mkdocstrings-python-accessors.svg)](https://github.com/climate-resource/mkdocstrings-python-accessors/graphs/contributors)
+
 ## Status
 
 <!---
