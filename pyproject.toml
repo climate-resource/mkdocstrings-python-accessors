@@ -1,0 +1,57 @@
+[project]
+name = "mkdocstrings-python-accessors"
+version = "0.3.4a1"
+description = "A Python accessor handler for mkdocstrings."
+authors = [{name = "Zebedee Nicholls", email = "zebedee.nicholls@climate-resource.com"}]
+license = {text = "BSD-3-Clause"}
+readme = "README.md"
+requires-python = ">=3.9"
+keywords = []
+classifiers = [
+    # TODO: pull some of these across into our copier template
+    "Development Status :: 4 - Beta",
+    "Intended Audience :: Developers",
+    "Programming Language :: Python",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3 :: Only",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Programming Language :: Python :: 3.13",
+    "Topic :: Documentation",
+    "Topic :: Software Development",
+    "Topic :: Utilities",
+    "Typing :: Typed",
+]
+dependencies = [
+    "mkdocstrings-python-xref>=1.0",
+]
+
+# TODO: pull into our copier template
+[project.urls]
+Homepage = "https://climate-resource.github.io/mkdocstrings-python-accessors"
+Documentation = "https://climate-resource.github.io/mkdocstrings-python-accessors"
+Changelog = "https://climate-resource.github.io/mkdocstrings-python-accessors/changelog"
+Repository = "https://github.com/climate-resource/mkdocstrings-python-accessors"
+Issues = "https://github.com/climate-resource/mkdocstrings-python-accessors/issues"
+Discussions = "https://github.com/climate-resource/mkdocstrings-python-accessors/discussions"
+
+[build-system]
+requires = ["pdm-backend"]
+build-backend = "pdm.backend"
+
+[tool.pdm.build]
+package-dir = "src"
+includes = ["src/mkdocstrings_handlers"]
+# Consider adding something like this to our copier template.
+# Include as much as possible in the source distribution, to help redistributors.
+excludes = ["**/.pytest_cache"]
+source-includes = [
+    # "docs",
+    # "scripts",
+    # "tests",
+    # "mkdocs.yml",
+    # "*.md",
+    "LICENCE",
+]
