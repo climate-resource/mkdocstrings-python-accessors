@@ -21,3 +21,8 @@ from the examples given in that link.
 
 <!-- towncrier release notes start -->
 
+## mkdocstrings-python-accessors v0.1.0 (2025-01-17)
+
+### 🔧 Trivial/Internal Changes
+
+- [#1](https://github.com/climate-resource/mkdocstrings-python-accessors/pull/1)
